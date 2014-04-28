@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+
+<div class='container-top'>
+
+		<div class='log-image'>
+		<%= image_tag("Krowdprizelastlogo2.png", alt: "image", class:'img-responsive logo') %>
+		</div>
+
+		<div class='opening-text'>
+			<strong>Krowdprize</strong> The Platform For World-changing Crowdfunded Contests
+		</div>
+		<div class="sub-opening-text"> 
+			Incentivizing human progress one contest at a time 
+		</div>
+
+
+		<div class="container-form">
+				<%= form_for @premail, html: {class: "form-inline", role: "form"} do |f| %>
+					  <% if @premail.errors.any? %>				    
+					      <h2><%= pluralize(@premail.errors.count, "error") %> prohibited this link from being saved:</h2>
+					      <ul>
+					      <% @premail.errors.full_messages.each do |msg| %>
+					        <li><%= msg %></li>
+					      <% end %>
+					      </ul>
+					  <% end %>
+				  <div class="form-group signup-field">
+				    <%= f.label :email, class:"sr-only" %>
+				    <%= f.email_field :email, class:"form-control signup-input", placeholder:"Enter email" %>
+				  </div>
+				  <div>
+				    <%= f.submit "Get Early Access", class:"btn btn-default signup-button" %>
+				  </div>
+				<% end %>
+		</div>
+
+</div>
+
+
+
